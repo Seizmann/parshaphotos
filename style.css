@@ -1,0 +1,121 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent scroll on lock screen */
+}
+
+/* --- LOCK SCREEN STYLES --- */
+#lock-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: #000;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+#lock-screen.hidden {
+    transform: translateY(-100%); /* Slide up */
+}
+
+.lock-container { text-align: center; }
+
+.pin-display {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dot {
+    width: 12px; height: 12px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.dot.filled { background: #fff; }
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.key {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.key:active { background: white; color: black; }
+.key.empty { background: transparent; cursor: default; }
+.key.delete { font-size: 1.2rem; background: rgba(255,59,48,0.3); }
+
+/* Error Shake Animation */
+.shake { animation: shake 0.4s ease-in-out; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* --- GALLERY STYLES --- */
+#gallery-view {
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#gallery-view.visible { opacity: 1; }
+
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+#lock-btn {
+    padding: 8px 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #222;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

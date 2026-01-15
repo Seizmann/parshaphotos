@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="lock-screen" class="active">
+        <div class="lock-container">
+            <h2>Enter Passcode</h2>
+            
+            <div class="pin-display">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="keypad">
+                <button class="key" data-num="1">1</button>
+                <button class="key" data-num="2">2</button>
+                <button class="key" data-num="3">3</button>
+                <button class="key" data-num="4">4</button>
+                <button class="key" data-num="5">5</button>
+                <button class="key" data-num="6">6</button>
+                <button class="key" data-num="7">7</button>
+                <button class="key" data-num="8">8</button>
+                <button class="key" data-num="9">9</button>
+                <button class="key empty"></button>
+                <button class="key" data-num="0">0</button>
+                <button class="key delete">C</button>
+            </div>
+        </div>
+    </section>
+
+    <main id="gallery-view">
+        <header>
+            <h1>My Collection</h1>
+            <button id="lock-btn">🔒 Lock</button>
+        </header>
+        
+        <div class="grid-container" id="grid">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

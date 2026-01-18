@@ -1,5 +1,5 @@
 // --- CONFIGURATION ---
-const CORRECT_PIN = "4558";
+const CORRECT_PIN = "0000";
 const TOTAL_PHOTOS = 60;       // How many photos you have
 const PHOTO_FOLDER = "./";     // UPDATED: Pointing to root directory
 const FILE_EXTENSION = ".jpg"; // .jpg or .png
@@ -166,4 +166,5 @@ function openLightbox(src) {
 function closeLightbox() {
     lightbox.style.display = "none";
     lightboxImg.src = "";
+
 }
